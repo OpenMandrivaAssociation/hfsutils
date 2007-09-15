@@ -8,12 +8,12 @@ Version:	%{version}
 Release:	%{release}
 
 Source:		%{name}-%{version}.tar.bz2
-Patch0:		hfsutils-3.2.6_errno.patch.bz2
-Patch1:		hfsutils-3.2.6-lib64.patch.bz2
+Patch0:		hfsutils-3.2.6_errno.patch
+Patch1:		hfsutils-3.2.6-lib64.patch
 
 BuildRequires:	X11-devel tk tk-devel tcl tcl-devel autoconf2.1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-License:	GPL
+License:	GPLv2+
 Group:		File tools
 URL:		http://www.mars.org/home/rob/proj/hfs/
 
@@ -46,7 +46,7 @@ HFS-formatted volumes.
 %setup -q
 %patch0 -p1 -b .errno
 %patch1 -p1 -b .lib64
-autoconf
+#autoconf
 
 %build
 export CFLAGS="%optflags -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE"
