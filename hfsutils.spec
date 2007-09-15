@@ -1,6 +1,6 @@
 %define name	hfsutils
 %define version	3.2.6
-%define release	%mkrel 17
+%define release	%mkrel 18
 
 Summary:	Tools for reading and writing Macintosh HFS volumes
 Name:		%{name}
@@ -46,7 +46,7 @@ HFS-formatted volumes.
 %setup -q
 %patch0 -p1 -b .errno
 %patch1 -p1 -b .lib64
-#autoconf
+autoreconf -v -i
 
 %build
 export CFLAGS="%optflags -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE"
