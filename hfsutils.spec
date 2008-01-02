@@ -12,6 +12,7 @@ Patch0:		hfsutils-3.2.6_errno.patch
 Patch1:		hfsutils-3.2.6-lib64.patch
 
 BuildRequires:	X11-devel tk tk-devel tcl tcl-devel autoconf2.1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 Group:		File tools
 URL:		http://www.mars.org/home/rob/proj/hfs/
