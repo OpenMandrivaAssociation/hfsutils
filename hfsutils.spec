@@ -1,6 +1,6 @@
 %define name	hfsutils
 %define version	3.2.6
-%define release	%mkrel 18
+%define release	%mkrel 19
 
 Summary:	Tools for reading and writing Macintosh HFS volumes
 Name:		%{name}
