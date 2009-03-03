@@ -1,6 +1,6 @@
 %define name	hfsutils
 %define version	3.2.6
-%define release	%mkrel 20
+%define release	%mkrel 21
 
 Summary:	Tools for reading and writing Macintosh HFS volumes
 Name:		%{name}
@@ -49,24 +49,24 @@ HFS-formatted volumes.
 autoreconf -v -i
 
 %build
-export CFLAGS="%optflags -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE"
-%configure --with-tcl --with-tk --enable-devlibs --with-lib=%{_lib}
+export CFLAGS="%optflags -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DUSE_INTERP_RESULT"
+%configure2_5x --with-tcl --with-tk --enable-devlibs --with-lib=%{_lib}
 
 %make
 
 %install
-rm -fr $RPM_BUILD_ROOT
+rm -fr %{buildroot}
 # (Dadou) Needed...
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
-mkdir -p $RPM_BUILD_ROOT%{_libdir}
-mkdir -p $RPM_BUILD_ROOT%{_includedir}
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_mandir}/man1
+mkdir -p %{buildroot}%{_libdir}
+mkdir -p %{buildroot}%{_includedir}
 
 # (Dadou) Don't use macros here
-make install BINDEST=$RPM_BUILD_ROOT%_prefix/bin MANDEST=$RPM_BUILD_ROOT%_mandir LIBDEST=$RPM_BUILD_ROOT%_libdir INCDEST=$RPM_BUILD_ROOT%_includedir
+make install BINDEST=%{buildroot}%_prefix/bin MANDEST=%{buildroot}%_mandir LIBDEST=%{buildroot}%_libdir INCDEST=%{buildroot}%_includedir
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
