@@ -1,6 +1,6 @@
 %define name	hfsutils
 %define version	3.2.6
-%define release	%mkrel 24
+%define release	%mkrel 25
 
 Summary:	Tools for reading and writing Macintosh HFS volumes
 Name:		%{name}
@@ -10,8 +10,7 @@ Release:	%{release}
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		hfsutils-3.2.6_errno.patch
 Patch1:		hfsutils-3.2.6-lib64.patch
-
-BuildRequires:	X11-devel tk tk-devel tcl tcl-devel autoconf2.1
+BuildRequires:	tk tk-devel tcl tcl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 Group:		File tools
@@ -40,7 +39,6 @@ C library for low-level access to volumes.
 %description xhfs
 Xhfs presents a graphical front-end for browsing and copying files on
 HFS-formatted volumes.
-
 
 %prep
 %setup -q
