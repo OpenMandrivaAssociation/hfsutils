@@ -1,0 +1,78 @@
+--- hfsutils-3.2.6/configure.in.lib64	1998-09-15 21:19:42.000000000 +0200
++++ hfsutils-3.2.6/configure.in	2003-10-03 11:57:45.000000000 +0200
+@@ -25,6 +25,11 @@ AC_CONFIG_HEADER(config.h)
+ 
+ AC_CONFIG_SUBDIRS(libhfs librsrc)
+ 
++AC_ARG_WITH(lib,
++    [  --with-lib=NAME         use NAME as the native library dir name],
++    [lib=$with_lib], [lib=lib]
++)
++
+ AC_ARG_WITH(tcl,
+     [  --with-tcl[=DIR]        build the Tcl components], [
+     case "$with_tcl" in
+@@ -121,14 +126,14 @@ then
+     found=""
+     for dir in  \
+ 	"$tcl_dir"		\
+-	"$tcl_dir/lib"		\
+-	"$tcl_dir/../lib"	\
+-	/usr/local/lib		\
+-	/usr/local/lib/tcl*	\
+-	/usr/local/tcl*/lib	\
+-	/usr/lib		\
+-	/usr/lib/tcl*		\
+-	/usr/tcl*/lib		\
++	"$tcl_dir/$lib"		\
++	"$tcl_dir/../$lib"	\
++	/usr/local/$lib		\
++	/usr/local/$lib/tcl*	\
++	/usr/local/tcl*/$lib	\
++	/usr/$lib		\
++	/usr/$lib/tcl*		\
++	/usr/tcl*/$lib		\
+ 	;			\
+     do
+ 	if test -r "$dir/tclConfig.sh"
+@@ -159,7 +164,7 @@ then
+ 	"$tcl_dir"					\
+ 	"$tcl_dir/include"				\
+ 	"$tcl_dir/../include"				\
+-	`echo "$tcl_dir" | sed -e 's|/lib|/include|'`	\
++	`echo "$tcl_dir" | sed -e 's|/$lib|/include|'`	\
+ 	;						\
+     do
+ 	if test -r "$dir/tcl.h"
+@@ -200,14 +205,14 @@ then
+     found=""
+     for dir in  \
+ 	"$tk_dir"		\
+-	"$tk_dir/lib"		\
+-	"$tk_dir/../lib"	\
+-	/usr/local/lib		\
+-	/usr/local/lib/tk*	\
+-	/usr/local/tk*/lib	\
+-	/usr/lib		\
+-	/usr/lib/tk*		\
+-	/usr/tk*/lib		\
++	"$tk_dir/$lib"		\
++	"$tk_dir/../$lib"	\
++	/usr/local/$lib		\
++	/usr/local/$lib/tk*	\
++	/usr/local/tk*/$lib	\
++	/usr/$lib		\
++	/usr/$lib/tk*		\
++	/usr/tk*/$lib		\
+ 	;			\
+     do
+ 	if test -r "$dir/tkConfig.sh"
+@@ -238,7 +243,7 @@ then
+ 	"$tk_dir"					\
+ 	"$tk_dir/include"				\
+ 	"$tk_dir/../include"				\
+-	`echo "$tk_dir" | sed -e 's|/lib|/include|'`	\
++	`echo "$tk_dir" | sed -e 's|/$lib|/include|'`	\
+ 	;						\
+     do
+ 	if test -r "$dir/tk.h"

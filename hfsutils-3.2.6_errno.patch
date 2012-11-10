@@ -1,0 +1,10 @@
+--- hfsutils-3.2.6/tclhfs.c.errno	2003-04-09 21:11:39.000000000 +0200
++++ hfsutils-3.2.6/tclhfs.c	2003-04-09 21:12:08.000000000 +0200
+@@ -34,6 +34,7 @@
+ # include <limits.h>
+ 
+ # include <tcl.h>
++# include <errno.h>
+ 
+ # include "tclhfs.h"
+ # include "hfs.h"
