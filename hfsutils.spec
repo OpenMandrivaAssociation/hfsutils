@@ -1,7 +1,7 @@
 Summary:	Tools for reading and writing Macintosh HFS volumes
 Name:		hfsutils
 Version:	3.2.6
-Release:	29
+Release:	30
 License:	GPLv2+
 Group:		File tools
 Url:		http://www.mars.org/home/rob/proj/hfs/
@@ -38,6 +38,7 @@ HFS-formatted volumes.
 %prep
 %setup -q
 %apply_patches
+find . -name Makefile.in |xargs sed -i -e 's,configure.in,configure.ac,g'
 autoreconf -vi
 
 %build
