@@ -8,6 +8,10 @@ Url:		http://www.mars.org/home/rob/proj/hfs/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		hfsutils-3.2.6_errno.patch
 Patch1:		hfsutils-3.2.6-lib64.patch
+BuildRequires:	pkgconfig(fontconfig)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xft)
+BuildRequires:	pkgconfig(xscrnsaver)
 BuildRequires:	pkgconfig(tcl)
 BuildRequires:	pkgconfig(tk)
 
