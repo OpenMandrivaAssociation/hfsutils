@@ -41,7 +41,7 @@ HFS-formatted volumes.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 find . -name Makefile.in |xargs sed -i -e 's,configure.in,configure.ac,g'
 autoreconf -vi
 
