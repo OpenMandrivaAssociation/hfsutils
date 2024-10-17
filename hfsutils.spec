@@ -4,7 +4,7 @@ Version:	3.2.6
 Release:	42
 License:	GPLv2+
 Group:		File tools
-Url:		http://www.mars.org/home/rob/proj/hfs/
+Url:		https://www.mars.org/home/rob/proj/hfs/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		hfsutils-3.2.6_errno.patch
 Patch1:		hfsutils-3.2.6-lib64.patch
