@@ -1,7 +1,7 @@
 Summary:	Tools for reading and writing Macintosh HFS volumes
 Name:		hfsutils
 Version:	3.2.6
-Release:	42
+Release:	43
 License:	GPLv2+
 Group:		File tools
 Url:		https://www.mars.org/home/rob/proj/hfs/
