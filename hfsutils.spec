@@ -8,6 +8,11 @@ Url:		https://www.mars.org/home/rob/proj/hfs/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		hfsutils-3.2.6_errno.patch
 Patch1:		hfsutils-3.2.6-lib64.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xft)
